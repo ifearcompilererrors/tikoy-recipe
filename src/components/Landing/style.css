@@ -1,0 +1,134 @@
+.landing__container {
+  display: flex;
+  align-items: center;
+  background: #000;
+  background: url('/src/assets/Lamp_Landing.png');
+  background-color: rgb(30, 17, 34);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  height: 100vh;
+  max-width: 100vw;
+  overflow: hidden;
+}
+
+@media (max-width: 600px) {
+  .landing__container {
+    display: flex;
+    flex-direction: column-reverse;
+    overflow: hidden;
+    height: 100vh;
+    max-width: 100vw;
+  }
+}
+
+.oxchef__container {
+  max-height: 120%;
+}
+
+@media (min-width: 600px) {
+  .oxchef__container img{
+    transform: scale(2);
+    max-height: 120%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .oxchef__container img{
+    transform: scale(1.5);
+    max-height: 120%;
+  }
+}
+
+@media (min-width: 1400px) {
+  .oxchef__container img{
+    max-height: 70vh;
+  }
+}
+
+.oxchef__img {
+  max-height: 100%;
+  max-width: 100%;
+  z-index: 0;
+}
+
+.header__container {
+  max-height: 100%;
+  max-width: 100%;
+  padding-right: 1em;
+}
+
+.header__section p {
+  font-family: "Sailec-Regular";
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  text-align: center;
+}
+
+.header__section h1:first-child {
+   margin: 0;
+}
+
+.header__section h1:nth-child(2) {
+   margin: 0 0 0 1em;
+}
+
+.landing__btns {
+  grid-row: 3;
+  padding: 1rem 0;
+  display: flex;
+  justify-content: center;
+}
+
+.landing__btns button {
+  margin-right: 1em;
+}
+
+.title__container {
+  font-family: 'Windsor BT Light';
+  font-size: 8rem;
+  margin-bottom: 0;
+  letter-spacing: 1rem;
+}
+
+@media (max-width: 800px) {
+  .title__container {
+    font-family: 'Windsor BT Light';
+    font-size: 5rem;
+    margin-bottom: 0;
+    letter-spacing: 1rem;
+  }  
+}
+
+@media (max-width: 600px) {
+  .title__container {
+    font-family: 'Windsor BT Light';
+    font-size: 3rem;
+    margin-bottom: 0;
+    letter-spacing: 1rem;
+  }  
+}
+
+.title__children {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+}
+
+.title__children span {
+  grid-area: 1 / 1 / 2 / 2;
+}
+
+.title__children span:first-child {
+  color: #000;
+}
+
+.title__children span:nth-child(2) {
+  color: #fff;
+  transform: translateX(-0.04em);
+}
+
+.title__children span:last-child {
+  color: #000;
+  transform: translateX(-0.1em);
+}

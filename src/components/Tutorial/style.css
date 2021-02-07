@@ -1,0 +1,197 @@
+.tutorial__container {
+  background-color: #fff;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 40vh 60vh;
+}
+
+.tutorial__oxpen {
+  grid-row: 1;
+  display: flex;
+}
+
+.instructions__container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    position: relative;
+    width: 50vw;
+    min-width: 50%;
+}
+
+.instructions__bubble {
+  float: right;
+  max-width: 80%;
+  border-radius: 10px;
+  z-index: 0;
+  border: 2px solid #000;
+  padding: 5px 15px;
+  box-shadow: 5px 5px 0 #000;
+  background-color: #fff;
+}
+
+.instructions__copy {
+  font-family: 'Jack-Armstrong';
+  position: relative;
+}
+
+.tutorial__oxchef_container {
+  display: flex;
+  min-width: 50vw;
+  max-width: 50vw;
+  justify-content: center;
+  align-items: center;
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
+
+.interactive__container {
+  grid-row: 2;
+  z-index: 1;
+}
+.step__container {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.illustration {
+  width: 10px;
+  height: 10px;
+  background-color: #000;
+}
+
+.illustrations__container {
+  z-index: 0;
+  height: 80%;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.step2_3__steamer_container {
+  min-width: 50vw;
+  max-width: 50vw;
+}
+
+.step2_3__ingredients_container {
+  min-width: 70vw;
+  max-width: 70vw;
+}
+
+.step2__coating {
+  transform: translate(-4em, 7em);
+}
+
+.step3__filling {
+  transform: scale(1) translate(0em, 0em);
+}
+
+.step4__asset_container {
+  min-width: 40vw;
+  max-width: 40vw;
+}
+
+.step4__tikoy {
+  transform: translateX(3em) scale(1.5);
+}
+
+.step5__filling_container {
+  min-width: 20vw;
+  max-width: 20vw;
+}
+
+.step5__tikoy_container {
+  min-width: 80vw;
+  max-width: 80vw;
+}
+
+.step5__tikoy {
+  transform: scale(1.2) translateY(-5em);
+}
+
+.step6__asset {
+  transform: scale(2) translateY(-5em);
+}
+
+.step7__platter {
+  min-width: 60vw;
+  max-width: 60vw;
+}
+
+.step7__platter_asset {
+  width: 100%;
+  transform: scale(1.2);
+}
+
+.step7__plate_container {
+  display: grid;
+  grid-template-columns: 1fr;
+  min-width: 60vw;
+  max-width: 60vw;
+}
+
+.step7__plate_asset {
+  grid-area: 1 / 1 / 2 / 2;
+  width: 100%;
+  transform: scale(1.5) translate(-3em, -1em);
+}
+
+.step8__container {
+  display: grid;
+  width: 50vw;
+}
+
+.step8__asset {
+  grid-area: 1 / 1 / 2 / 2;
+  width: 100%;
+  transform: translate(-8em, 9em);
+  z-index: 1 !important;
+}
+
+.step8__speech_bubble {
+  grid-area: 1 / 1 / 2 / 2;
+  display: flex;
+  width: 100%;
+  height: 50%;
+  align-items: center;
+}
+
+.step8__speech_bubble .instructions__container {
+  justify-content: flex-start;
+}
+
+.asset {
+  max-width: 100%;
+  max-height: 100%;
+  z-index: -1;
+}
+
+.step__buttons {
+  z-index: 1;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.finish__container {
+  background: url('/src/assets/Step_8_Background.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.oxhead__container {
+  width: 50vw;
+}
+
+.oxhead {
+  transform: translateX(3em);
+  width: 100%;
+}
