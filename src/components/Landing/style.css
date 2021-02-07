@@ -54,7 +54,7 @@
 .header__container {
   max-height: 100%;
   max-width: 100%;
-  padding-right: 1em;
+  padding: 0 1em;
 }
 
 .header__section p {
@@ -80,8 +80,8 @@
   justify-content: center;
 }
 
-.landing__btns button {
-  margin-right: 1em;
+.landing__btns button + button {
+  margin-left: 1em;
 }
 
 .title__container {

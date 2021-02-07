@@ -1,5 +1,12 @@
-.story__container {
+.modal-open {
+  display: block;
+}
+
+.modal-closed {
   display: none;
+}
+
+.story__container {
   top: 0;
   left: 0;
   right: 0;
@@ -10,7 +17,7 @@
   border: 5px solid #000;
   border-radius: 5px;
   background-color: purple;
-  height: 80vh;
+  height: 90vh;
   padding-top: 20px;
   padding-bottom: 20px;
   overflow-x: hidden;

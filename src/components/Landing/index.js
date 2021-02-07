@@ -34,10 +34,10 @@ const Landing = ({ handleShowStory }) => (
             </p>
       </section>
       <div className={'landing__btns'}>
-        <Button handleClick={handleShowStory}>
+        <Button size={'lg'} handleClick={handleShowStory}>
           What is Tikoy?
         </Button>
-        <Button>
+        <Button size={'lg'}>
           <a href='#recipe'>Get Started!</a>
         </Button>
       </div>
