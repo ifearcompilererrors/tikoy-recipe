@@ -2,7 +2,7 @@ import React from 'react';
 import '../../App.css';
 import Button from '../Button';
 import './style.css';
-import oxchef from '../../assets/Oxchef_No_Margin.png'
+import Oxchef from '../../assets/Oxchef_No_Margin.png'
 
 const Landing = ({ handleShowStory }) => (
   <div className={'landing__container'}>
@@ -10,7 +10,7 @@ const Landing = ({ handleShowStory }) => (
       <img
         alt='Illustrated standing ox posing with its arms crossed wearing a chef uniform and a fancy, colorful hat.'
         className={'oxchef__img'}
-        src={oxchef}
+        src={Oxchef}
       />
     </div>
     <div className={'header__container'}>
@@ -34,10 +34,10 @@ const Landing = ({ handleShowStory }) => (
             </p>
       </section>
       <div className={'landing__btns'}>
-        <Button size={'lg'} handleClick={handleShowStory}>
+        <Button handleClick={handleShowStory}>
           What is Tikoy?
         </Button>
-        <Button size={'lg'}>
+        <Button>
           <a href='#recipe'>Get Started!</a>
         </Button>
       </div>
