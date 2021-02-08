@@ -10,4 +10,4 @@ if (fs.existsSync('./build')) {
 childProcess.execSync('react-scripts build', { stdio: 'inherit' })
 
 // Move app build to server/build directory
-fse.moveSync('./build', './server/build', { overwrite: true })
+fse.moveSync('./build', './public/build', { overwrite: true })
