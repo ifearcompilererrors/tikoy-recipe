@@ -307,10 +307,10 @@ const TutorialContainer = () => {
   const [state, setState] = useState({ step: 0, filling: UBE, coating: OREOS });
 
   return (
-    <>
+    <div id='recipe'>
       {state.step < 8 && (
         <>
-          <div id='recipe' className={'tutorial__container'}>
+          <div className={'tutorial__container'}>
             <div className={'tutorial__oxpen'}>
               <InstructionsContainer step={state.step} />
               <div className='tutorial__oxchef_container'>
@@ -334,7 +334,7 @@ const TutorialContainer = () => {
           <Step step={state.step} tikoy={{ filling: state.filling, coating: state.coating }} />
         </div>
         )}
-    </>
+    </div>
   );
 }
 
