@@ -3,7 +3,9 @@ import Button from '../Button';
 import './style.css';
 
 const handleSubmit = async () => {
-  const submissions = await fetch('/submissions').then(res => res.json());
+  const submissions = await fetch('/submissions', {
+    method: 'POST'
+  }).then(res => res.json());
   console.log(submissions);
 };
 

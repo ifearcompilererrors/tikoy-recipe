@@ -8,7 +8,7 @@
     "@testing-library/user-event": "^12.1.10",
     "express": "^4.17.1",
     "fs": "^0.0.1-security",
-    "googleapis": "39",
+    "googleapis": "59",
     "nodemon": "^2.0.7",
     "path": "^0.12.7",
     "react": "^17.0.1",
@@ -19,12 +19,12 @@
   "proxy": "http://localhost:4000",
   "scripts": {
     "build": "node ./buildScript",
-    "start:server": "cross-env NODE_ENV=development nodemon server/index.js --watch server/*",
+    "start:server": "nodemon server/index.js --watch server/*",
     "start:client": "BROWSER=none react-scripts start",
     "build:client": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "start": "concurrently \"yarn run start:server\" \"yarn run start:client\" --kill-others"
+    "start": "source .env && concurrently \"yarn run start:server\" \"yarn run start:client\" --kill-others"
   },
   "eslintConfig": {
     "extends": [

@@ -1,6 +1,7 @@
 const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
+const { getAuthToken } = require('./sheetsService');
 
 const app = express();
 const port = 4000
@@ -14,6 +15,12 @@ app.use((err, req, res, next) => {
 
   res.status(500).send('Something broke!')
 })
+
+app.use(async (req, res, next) => {
+  res.locals.googleAuth = await getAuthToken();
+
+  next();
+});
 
 app.use('/submissions', require('./submissions'))
 
