@@ -17,14 +17,15 @@
     "web-vitals": "^1.0.1"
   },
   "proxy": "http://localhost:4000",
+  "main": "index.js",
   "scripts": {
-    "build": "node ./buildScript",
-    "start:server": "nodemon server/index.js --watch server/*",
+    "build": "react-scripts build",
+    "start:server": "nodemon index.js --watch index.js server/*",
     "start:client": "BROWSER=none react-scripts start",
-    "build:client": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "start": "source .env && concurrently \"yarn run start:server\" \"yarn run start:client\" --kill-others"
+    "dev": "source .env && concurrently \"yarn run start:server\" \"yarn run start:client\" --kill-others",
+    "start": "node index.js"
   },
   "eslintConfig": {
     "extends": [

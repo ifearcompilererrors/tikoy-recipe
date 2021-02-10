@@ -1,14 +1,11 @@
 const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
-const { getAuthToken } = require('./sheetsService');
+const { getAuthToken } = require('./server/sheetsService');
 
 const app = express();
-const port = 4000
 
-app.use(express.static(path.join(process.cwd(), 'public')));
-
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
 app.use((err, req, res, next) => {
   console.error(err.stack)
@@ -22,8 +19,19 @@ app.use(async (req, res, next) => {
   next();
 });
 
-app.use('/submissions', require('./submissions'))
+app.use('/submissions', require('./server/submissions'))
 
+app.use(express.static(path.join(__dirname, "build")));
+
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "build", "index.html"));
+});
+
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "build", "index.html"));
+});
+
+const port = process.env.PORT || 4000;
 app.listen(port, () => {
   console.log(`Server listening at http://localhost:${port}`)
 })
