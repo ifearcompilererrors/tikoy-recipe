@@ -54,11 +54,11 @@ import Button from '../Button';
 import instructions from './instructions.json';
 import './style.css';
 
-const PEANUTS = 'peanuts';
-const OREOS = 'oreos';
-const CHOCOLATE = 'chocolate';
-const UBE = 'ube';
-const PB = 'peanut butter';
+export const PEANUTS = 'peanuts';
+export const OREOS = 'oreos';
+export const CHOCOLATE = 'chocolate';
+export const UBE = 'ube';
+export const PB = 'peanut butter';
 
 const InstructionsContainer = ({ step, coating, filling }) => (
   <div className={'instructions__container'}>

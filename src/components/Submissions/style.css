@@ -1,3 +1,49 @@
 .submissions__container {
-  width: 100vw;
+  min-height: 100vh;
+  max-width: 100vw;
+}
+
+.submit__container {
+  height: 40vh;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.gallery__container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.lantern__container {
+  min-width: 600px;
+  max-width: 600px;
+  display: grid;
+}
+
+.lantern__asset {
+  grid-area: 1 / 1 / 2 / 2;
+}
+
+.submission_copy__container {
+  grid-area: 1 / 1 / 2 / 2;
+  display: flex;
+  justify-content: center;
+}
+
+.submission__copy {
+  font-family: 'Jack-Armstrong';
+  font-size: 12px;
+  height: 50%;
+  align-self: flex-end;
+  width: 25%;
+  line-height: 1.1rem;
+  text-align: center;
+  transform: rotate(10deg) translate(-1.9em, 1em);
+}
+
+.gallery__tikoy {
+  grid-area: 1 / 1 / 2 / 2;
+  transform: scale(0.5) translate(-50%, 50%);
 }

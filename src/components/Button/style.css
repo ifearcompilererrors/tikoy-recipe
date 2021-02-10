@@ -27,6 +27,10 @@ button:active {
   transform: translate(3px, 2px);
 }
 
+button:focus {
+  outline: 4px dashed var(--orange2);
+}
+
 button.lg {
   padding: 10px 20px;
 	font-size: 2rem;
