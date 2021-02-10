@@ -33,12 +33,8 @@ async function getSheetValues({ auth }) {
 }
 
 async function appendSheetValues({ auth, data }) {
-  const values = [
-    // Data
-    [ 'Doing nothing all day', 'pb', 'peanut' ],
-    // [ data.submission, data.filling, data.coating ],
-  ];
-  const resource = { values };
+  const resource = { values: [data] };
+  console.log('appending values to sheet:', resource);
   try {
     const data = await sheets.spreadsheets.values.append({
       spreadsheetId: SPREADSHEET_ID,
@@ -47,7 +43,7 @@ async function appendSheetValues({ auth, data }) {
       resource,
       valueInputOption: 'RAW',
     });
-    return data;
+    return data.config.data.values;
   } catch (e) {
     console.log('Failed to append sheet values.')
     throw e;

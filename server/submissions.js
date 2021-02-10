@@ -8,9 +8,9 @@ router.get('/', async (req, res) => {
 });
 
 router.post('/', async (req, res) => {
-  const submission = {}; // req.body;
-  const data = await appendSheetValues({ auth: res.locals.googleAuth, data: submission });
-  res.json(data);
+  const { data } = req.body;
+  const update = await appendSheetValues({ auth: res.locals.googleAuth, data });
+  res.json(update);
 });
 
 module.exports = router;
