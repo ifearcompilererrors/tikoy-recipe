@@ -58,13 +58,18 @@ const PEANUTS = 'peanuts';
 const OREOS = 'oreos';
 const CHOCOLATE = 'chocolate';
 const UBE = 'ube';
-const PB = 'pb';
+const PB = 'peanut butter';
 
-const InstructionsContainer = ({ step }) => (
+const InstructionsContainer = ({ step, coating, filling }) => (
   <div className={'instructions__container'}>
-    <div className={'instructions__bubble'}>
+    <div className={'instructions__bubble instructions__copy'}>
       <p id='instructions-copy' className={'instructions__copy'} dangerouslySetInnerHTML={{ __html: instructions[step] }}></p>
     </div>
+    {step > 1 && step < 8 && (<div className={'instructions__bubble custom_choice__container instructions__copy'}>
+      <p id='instructions-copy'>Your chosen ingredients are:</p>
+      {step > 1 && <p>Coating: <b className={'custom_choice'}>{coating}</b></p>}
+      {step > 2 && <p>Filling: <b className={'custom_choice'}>{filling}</b></p>}
+    </div>)}
   </div>
 );
 
@@ -72,7 +77,7 @@ const Illustration = ({ className, alt, src }) => (
   <img alt={alt} className={`asset ${className}`} src={src} />
 );
 
-const Step = ({ step, tikoy, handleGetNextStep, handleFinish }) => {
+const Step = ({ step, tikoy, handleGetNextStep, handleFinish, handleUpdateCustom }) => {
   const coating = {
     [OREOS]: { id: OREOS, plate: PlateOreos, coat: CoatOreos, finale: TikoyOreo},
     [PEANUTS]: { id: PEANUTS, plate: PlatePeanuts, coat: CoatPeanuts, finale: TikoyPeanut},
@@ -100,8 +105,8 @@ const Step = ({ step, tikoy, handleGetNextStep, handleFinish }) => {
   };
 
   const [state, setState] = useState({
-    coating: coating[tikoy?.coating || OREOS],
-    filling: filling[tikoy?.filling || UBE],
+    coating: tikoy?.coating,
+    filling: tikoy?.filling,
     
     step1: Steamer,
     step2col2: Coating,
@@ -117,6 +122,16 @@ const Step = ({ step, tikoy, handleGetNextStep, handleFinish }) => {
     step8filling: filling[UBE].finale,
     step8coating: coating[OREOS].finale,
   });
+
+  const handleSetCoating = ({ coatingId }) => {
+    setState({ ...state, coating: coating[coatingId] });
+    handleUpdateCustom({ coating: coating[coatingId], filling: state.filling });
+  };
+
+  const handleSetFilling = ({ fillingId }) => {
+    setState({ ...state, filling: filling[fillingId], step6: filling[fillingId].unroll, step7col1: filling[fillingId].platter });
+    handleUpdateCustom({ coating: state.coating, filling: filling[fillingId] });
+  };
 
   const handleCool = () => {
     setState({ ...state, step4col2: AbanikoFan });
@@ -164,14 +179,14 @@ const Step = ({ step, tikoy, handleGetNextStep, handleFinish }) => {
               <Illustration className={'step2__coating'} src={state.step2col2} />
             </div>
           </div>
-          <div className={'step__buttons'}>
-            <Button handleClick={() => setState({ ...state, coating: coating[PEANUTS] })}>
+          <div className={'step__buttons step2__buttons'}>
+            <Button handleClick={() => handleSetCoating({ coatingId: PEANUTS })}>
               Peanuts
             </Button>
-            <Button handleClick={() => setState({ ...state, coating: coating[OREOS] })}>
+            <Button handleClick={() => handleSetCoating({ coatingId: OREOS })}>
               Oreos
             </Button>
-            <Button handleClick={() => handleGetNextStep()}>
+            <Button disabled={!state.coating} handleClick={() => handleGetNextStep()}>
               Next
             </Button>
           </div>
@@ -188,21 +203,21 @@ const Step = ({ step, tikoy, handleGetNextStep, handleFinish }) => {
           </div>
           <div className={'step__buttons'}>
             <Button
-             handleClick={() => setState({ ...state, filling: filling[PB], step6: filling[PB].unroll, step7col1: filling[PB].platter })}
+             handleClick={() => handleSetFilling({ fillingId: PB })}
             >
               Peanut Butter
             </Button>
             <Button
-             handleClick={() => setState({ ...state, filling: filling[UBE], step6: filling[UBE].unroll, step7col1: filling[UBE].platter })}
+             handleClick={() => handleSetFilling({ fillingId: UBE })}
             >
               Ube
             </Button>
             <Button
-             handleClick={() => setState({ ...state, filling: filling[CHOCOLATE], step6: filling[CHOCOLATE].unroll, step7col1: filling[CHOCOLATE].platter })}
+             handleClick={() => handleSetFilling({ fillingId: CHOCOLATE })}
             >
               Chocolate
             </Button>
-            <Button handleClick={() => handleGetNextStep()}>
+            <Button disabled={!state.filling} handleClick={() => handleGetNextStep()}>
               Next
             </Button>
           </div>
@@ -284,7 +299,7 @@ const Step = ({ step, tikoy, handleGetNextStep, handleFinish }) => {
             <Button handleClick={() => setState({ ...state, step7col2filling: state.filling.coat, step7col2coat: state.coating.coat, })}>
               Coat
             </Button>
-            <Button handleClick={() => handleFinish({ filling: state.filling.id , coating: state.coating.id })}>
+            <Button handleClick={() => handleFinish({ filling: state.filling, coating: state.coating })}>
               Finish
             </Button>
           </div>
@@ -304,7 +319,7 @@ const Step = ({ step, tikoy, handleGetNextStep, handleFinish }) => {
 }
 
 const TutorialContainer = () => {
-  const [state, setState] = useState({ step: 0, filling: UBE, coating: OREOS });
+  const [state, setState] = useState({ step: 0, filling: null, coating: null });
 
   return (
     <div id='recipe'>
@@ -312,7 +327,7 @@ const TutorialContainer = () => {
         <>
           <div className={'tutorial__container'}>
             <div className={'tutorial__oxpen'}>
-              <InstructionsContainer step={state.step} />
+              <InstructionsContainer step={state.step} filling={state.filling?.id} coating={state.coating?.id} />
               <div className='tutorial__oxchef_container'>
                 <Illustration alt='ox chef' className={'tutorial__oxchef_img'} src={Oxchef} />
               </div>
@@ -321,7 +336,8 @@ const TutorialContainer = () => {
               <Step
                 step={state.step}
                 handleGetNextStep={() => setState((s) => ({ ...state, step: s.step+1 }))}
-                handleFinish={({ filling, coating }) => setState({ step: 8, filling, coating })}
+                handleFinish={({ filling, coating }) => setState({ ...state, step: 8, filling, coating })}
+                handleUpdateCustom={({ filling, coating }) => setState({ ...state, filling, coating })}
               />
             </div>
           </div>

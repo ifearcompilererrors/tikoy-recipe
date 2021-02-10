@@ -1,9 +1,9 @@
 import './App.css';
 import './index.css';
 import { useState } from 'react';
-import Landing from './components/Landing/';
-import Story from './components/Story/';
-import Tutorial from './components/Tutorial/';
+import Landing from './components/Landing';
+import Story from './components/Story';
+import Tutorial from './components/Tutorial';
 import Submissions from './components/Submissions/';
 
 function App() {

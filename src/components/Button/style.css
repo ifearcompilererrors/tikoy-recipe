@@ -15,6 +15,10 @@ button {
   z-index: 3;
 }
 
+button:disabled {
+	background-color: var(--blue-tint);
+}
+
 button:hover {
   transform: translate(0.5px, 0.5px);
 }
