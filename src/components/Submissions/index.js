@@ -64,9 +64,9 @@ const Submissions = () => {
       <div className={'submit__container'}>
         <div className={'lantern__container'}>
           <img className={'asset lantern__asset'} src={Lantern} alt={''} />
-          <div className={'lantern__asset'}>
-            <textarea ref={inputRef} id={'submission'} name={'submission'}></textarea>
-            <Button size={'sm'} handleClick={() => handleSubmit(inputRef.current.value)}>Submit</Button>
+          <div className={'input__container'}>
+            <textarea ref={inputRef} className={'input__element'} id={'submission'} name={'submission'}></textarea>
+            <Button size={'sm'} className={'submit__button'} handleClick={() => handleSubmit(inputRef.current.value)}>Submit</Button>
           </div>
         </div>
       </div>

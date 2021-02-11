@@ -4,10 +4,32 @@
 }
 
 .submit__container {
-  height: 40vh;
+  height: 60vh;
   display: flex;
   justify-content: center;
   align-content: center;
+}
+
+.input__container {
+  grid-area: 1 / 1 / 2 / 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-content: center;
+  padding-bottom: 4em;
+  padding-right: 2em;
+}
+
+.input__element {
+  height: 14em;
+  width: 10em;
+  align-self: center;
+  margin-bottom: 1em;
+}
+
+.submit__button {
+  width: 4.5em;
+  align-self: center;
 }
 
 .gallery__container {

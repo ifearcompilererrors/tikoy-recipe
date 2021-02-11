@@ -27,23 +27,26 @@ button:active {
   transform: translate(3px, 2px);
 }
 
-button:focus {
+button:focus-visible {
   outline: 4px dashed var(--orange2);
 }
 
 button.lg {
+  height: 3rem;
   padding: 10px 20px;
 	font-size: 2rem;
   box-shadow: 4px 4px 0px #000;
 }
 
 button.md {
+  height: 2.5rem;
   padding: 5px 10px 5px 10px;
 	font-size: 1.5rem;
   box-shadow: 3px 3px 0px #000;
 }
 
 button.sm {
+  height: 1.8rem;
   padding: 5px 10px 5px 10px;
 	font-size: 1rem;
   box-shadow: 3px 3px 0px #000;
