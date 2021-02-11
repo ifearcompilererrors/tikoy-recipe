@@ -1,16 +1,5 @@
 @font-face {
   font-family: 'Windsor BT Light';
-  src: url('https://serious-studio.com/wp-content/uploads/Windsor-BT-Light.eot'); /* IE9 Compat Modes */
-  src: url('https://serious-studio.com/wp-content/uploads/Windsor-BT-Light.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-      url('https://serious-studio.com/wp-content/uploads/Windsor-BT-Light.woff2') format('woff2'), /* Modern Browsers */
-      url('https://serious-studio.com/wp-content/uploads/Windsor-BT-Light.woff') format('woff'), /* Modern Browsers */
-      url('https://serious-studio.com/wp-content/uploads/Windsor-BT-Light.ttf') format('truetype'), /* Safari, Android, iOS */
-      url('https://serious-studio.com/wp-content/uploads/Windsor-BT-Light.svg') format('svg'); /* Legacy iOS */
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Windsor BT Light';
   src: url('https://serious-studio.com/wp-content/uploads/WindsorBT-Light.eot'); /* IE9 Compat Modes */
   src: url('https://serious-studio.com/wp-content/uploads/WindsorBT-Light.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
       url('https://serious-studio.com/wp-content/uploads/WindsorBT-Light.woff2') format('woff2'), /* Modern Browsers */
