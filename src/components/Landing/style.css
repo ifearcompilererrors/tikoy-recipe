@@ -65,12 +65,28 @@
   text-align: center;
 }
 
+@media (min-width: 400px) {
+  .header__section h1:first-child {
+    margin: 0;
+    transform: translateX(-1em);
+    background-color: rgb(90, 40, 120, 0.5);
+  }
+
+  .header__section h1:nth-child(2) {
+    transform: translateX(-0.3em);
+    margin: 0;
+    background-color: rgb(90, 40, 120, 0.5);
+  }
+}
+
 .header__section h1:first-child {
-   margin: 0;
+  margin: 0;
+  background-color: rgb(90, 40, 120, 0.5);
 }
 
 .header__section h1:nth-child(2) {
-   margin: 0 0 0 1em;
+  margin: 0;
+  background-color: rgb(90, 40, 120, 0.5);
 }
 
 .landing__btns {
@@ -121,14 +137,15 @@
 
 .title__children span:first-child {
   color: #000;
+  transform: translateX(.09em);
 }
 
 .title__children span:nth-child(2) {
   color: #fff;
-  transform: translateX(-0.04em);
+  transform: translateX(.05em);
 }
 
 .title__children span:last-child {
   color: #000;
-  transform: translateX(-0.1em);
+  transform: translateX(.04em);
 }
