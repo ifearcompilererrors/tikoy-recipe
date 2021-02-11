@@ -44,7 +44,7 @@
     box-shadow: 5px 5px 0 #000;
     background-color: #fff;
     max-height: 90%;
-    overflow-y: scroll;
+    /* overflow-y: scroll; */
   }
 }
 
@@ -59,7 +59,13 @@
     box-shadow: 5px 5px 0 #000;
     background-color: #fff;
     max-height: 90%;
-    overflow-y: scroll;
+    /* overflow-y: scroll; */
+  }
+}
+
+@media (max-width: 600px) {
+  .instructions__copy {
+    font-size: 10px;
   }
 }
 
@@ -124,8 +130,20 @@
   transform: translate(-4em, 7em);
 }
 
+@media (max-width: 600px) {
+  .step2__coating {
+    transform: translate(-4em, 7em) scale(1.5);
+  }
+}
+
 .step3__filling {
   transform: scale(1) translate(0em, 0em);
+}
+
+@media (max-width: 600px) {
+  .step3__filling {
+    transform: scale(1.5) translate(-2.2em, 3.5em);
+  }
 }
 
 .step4__asset_container {
@@ -133,8 +151,28 @@
   max-width: 40vw;
 }
 
+@media (min-width: 850px) {
+  .step4__tikoy {
+    transform: translateX(3em) scale(1.5);
+  }
+}
+
 .step4__tikoy {
-  transform: translateX(3em) scale(1.5);
+  transform: translateX(3em) scale(4);
+}
+
+@media (max-width: 850px) {
+  .step4__abaniko {
+    transform: scale(2);
+  }
+}
+
+@media (max-width: 850px) {
+  .step5__filling_container {
+    min-width: 20vw;
+    max-width: 20vw;
+    transform: scale(1.5) translateX(1em);
+  }
 }
 
 .step5__filling_container {
@@ -148,7 +186,13 @@
 }
 
 .step5__tikoy {
-  transform: scale(1.2) translateY(-5em);
+  transform: scale(2) translate(1em, -3em);
+}
+
+@media (min-width: 850px) {
+  .step5__tikoy {
+    transform: scale(1.2) translateY(-5em);
+  }
 }
 
 .step6__asset {
@@ -215,6 +259,7 @@
   height: 50%;
   align-items: center;
   justify-content: flex-start;
+  transform: translateY(-2em);
 }
 
 @media (min-width: 700px) {
@@ -238,12 +283,19 @@
 .step__buttons {
   z-index: 1;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
 }
 
 .step2__buttons {
   align-self: flex-end;
   width: 70vw;
+}
+
+@media (max-width: 600px) {
+  .step2__buttons {
+    /* align-self: flex-end; */
+    width: 100vw;
+  }
 }
 
 .custom_choice__container {

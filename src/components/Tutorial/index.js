@@ -74,7 +74,7 @@ const InstructionsContainer = ({ step, coating, filling }) => (
 );
 
 const Illustration = ({ className, alt, src }) => (
-  <img alt={alt} className={`asset ${className}`} src={src} />
+  <img alt={alt} className={`asset ${className ?? ''}`} src={src} />
 );
 
 const Step = ({ step, tikoy, handleGetNextStep, handleFinish, handleUpdateCustom }) => {
@@ -229,7 +229,7 @@ const Step = ({ step, tikoy, handleGetNextStep, handleFinish, handleUpdateCustom
               <Illustration className={'step4__tikoy'} src={state.step4col1} />
             </div>
             <div className={'step4__asset_container'}>
-              <Illustration src={state.step4col2} />
+              <Illustration src={state.step4col2} className={'step4__abaniko'} />
             </div>
           </div>
           <div className={'step__buttons'}>
