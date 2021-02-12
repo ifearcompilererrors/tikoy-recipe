@@ -40,6 +40,9 @@ const Landing = ({ handleShowStory }) => (
         <Button>
           <a href='#recipe'>Get Started!</a>
         </Button>
+        <Button>
+          <a href='#gallery'>Share Your Tradition</a>
+        </Button>
       </div>
     </div>
   </div>

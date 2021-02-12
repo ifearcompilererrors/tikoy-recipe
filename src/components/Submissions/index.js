@@ -83,7 +83,7 @@ const Submissions = () => {
   };
 
   return allSubmissions ? (
-    <div className={'submissions__container'}>
+    <div id='gallery' className={'submissions__container'}>
       <div className={'submissions__head'}>
         <div className={'instructions__bubble tradition__container'}>
           <p className={'tradition__copy'}>What's your favorite</p>
