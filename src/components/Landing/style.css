@@ -27,15 +27,14 @@
 
 @media (min-width: 600px) {
   .oxchef__container img{
-    transform: scale(2);
+    transform: scale(1.5);
     max-height: 120%;
   }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1000px) {
   .oxchef__container img{
-    transform: scale(1.5);
-    max-height: 120%;
+    max-height: 80vh;
   }
 }
 
@@ -67,15 +66,11 @@
 
 @media (min-width: 400px) {
   .header__section h1:first-child {
-    margin: 0;
     transform: translateX(-1em);
-    background-color: rgb(90, 40, 120, 0.5);
   }
 
   .header__section h1:nth-child(2) {
     transform: translateX(-0.3em);
-    margin: 0;
-    background-color: rgb(90, 40, 120, 0.5);
   }
 }
 
@@ -100,11 +95,21 @@
   margin-left: 1em;
 }
 
+.header__section .title__container:first-child {
+  width: 80%;
+}
+
+.header__section .title__container:nth-child(2) {
+  width: 100%;
+}
+
 .title__container {
   font-family: 'Windsor BT Light';
   font-size: 8rem;
   margin-bottom: 0;
   letter-spacing: 1rem;
+  display: flex;
+  justify-content: center;
 }
 
 @media (max-width: 800px) {

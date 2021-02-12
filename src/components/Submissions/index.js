@@ -33,7 +33,7 @@ const fetchSubmissions = async () => {
       method: 'GET',
       ...fetchOpts,
     }).then(res => res.json());
-    const values = data.values.slice(1); // the first value will always be the column header array
+    const values = data.values.slice(1); // the first value will always be the column header array that I'm too lazy to format in the route instead right now
     // format submissions
     const submissions = formatData(values.reverse());
     return submissions;
@@ -85,10 +85,17 @@ const Submissions = () => {
   return allSubmissions ? (
     <div id='gallery' className={'submissions__container'}>
       <div className={'submissions__head'}>
-        <div className={'instructions__bubble tradition__container'}>
-          <p className={'tradition__copy'}>What's your favorite</p>
-          <p className={'tradition__copy'}>Lunar New Year</p>
-          <p className={'tradition__copy'}>Tradition?</p>
+        <div className={'tradition_bubbles__container'}>
+          <div className={'instructions__bubble tradition__container'}>
+            <p className={'tradition__copy'}>What's your favorite</p>
+            <p className={'tradition__copy'}>Lunar New Year</p>
+            <p className={'tradition__copy'}>Tradition?</p>
+          </div>
+          <div className={'instructions__bubble tradition__container_scroll'}>
+            <p className={'tradition__copy sm'}>Scroll down to read</p>
+            <p className={'tradition__copy sm'}>other people's favorite</p>
+            <p className={'tradition__copy sm'}>traditions 💛</p>
+          </div>
         </div>
         <div className={'lantern__wrapper'}>
           <div className={'lantern__container'}>
@@ -102,7 +109,7 @@ const Submissions = () => {
       </div>
       <div className={'gallery__container'}>
         {allSubmissions.map((data, index) => (
-          <GalleryLantern text={data.submission} filling={data.filling} coating={data.coating} submissionId={data.elementId ?? null} key={index} />
+          <GalleryLantern text={data.submission} filling={data.filling} coating={data.coating} submissionId={data.elementId ?? null} key={Date.now()+index} />
         ))}
       </div>
     </div>

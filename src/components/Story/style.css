@@ -6,11 +6,16 @@
   display: none;
 }
 
-.story__container {
+.story__background {
+  backdrop-filter: blur(5px);
   top: 0;
   left: 0;
   right: 0;
   position: fixed;
+  z-index: 5;
+}
+
+.story__container {
   max-width: calc(100% - 40px);
   width: 800px;
   margin: 20px auto;
@@ -22,7 +27,6 @@
   padding-bottom: 20px;
   overflow-x: hidden;
   overflow-y: scroll;
-  z-index: 5;
 }
 
 .story__container section {
@@ -43,14 +47,16 @@
   color: #fff;
 }
 
+.story__link {
+  color: var(--orange2);
+}
+
 .story__exit {
-  top: 0;
   cursor: pointer;
   font-size: 1rem;
-  right: 0;
-  margin: 10px;
-  position: absolute;
+  margin-right: 10px;
   z-index: 5;
+  float: right;
 }
 
 .story__exit:before {

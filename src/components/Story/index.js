@@ -14,65 +14,34 @@ const Story = ({ isVisible, handleHide }) => {
   }, [handleHide]);
 
   return (
-    <div className={`${isVisible ? 'modal-open' : 'modal-closed'} story__container `} id={'story-container'}>
-      <Button size={'sm'} className={'story__exit'} handleClick={handleHide}></Button>
-      <section>
-        <h1>
-          What is tikoy?
-        </h1>
-        <p>
-          I'm baby helvetica PBR&B lomo master cleanse offal williamsburg.
-          Ethical keffiyeh irony, mumblecore jean shorts jianbing tofu
-          meditation cold-pressed deep v intelligentsia pok pok health goth
-          franzen lyft. Mustache authentic scenester ugh, truffaut neutra
-          organic. Schlitz man braid vaporware, single-origin coffee cred
-          vegan chillwave marfa franzen lomo tattooed snackwave ennui twee.
-          Shoreditch man bun health goth, fashion axe squid PBR&B gochujang
-          subway tile fixie asymmetrical cray glossier. Selvage pinterest
-          irony asymmetrical.
-        </p>
+    <div className={`${isVisible ? 'modal-open' : 'modal-closed'} story__background`} id={'story-container'}>
+      <div className={'story__container'}>
+        <Button size={'sm'} className={'story__exit'} handleClick={handleHide}></Button>
+        <section>
+          <h1>
+            What is tikoy?
+          </h1>
+          <p>
+            Tikoy, as my Filipino parents remember it, is a sweet sticky rice cake wrapped around a meat filling that is dipped in scrambled eggs, fried, and sprinkled with sesame seeds. On Lunar New Year, my mom’s Chinese Filipino, or Tsinoy, neighbors would give this to her family as a treat and invite them to light fireworks in their yard. My parents grew up in Baguio, just a couple hours north of Manila where what might be the oldest Chinatown in the world is. Although my family, like many Filipinos, does not observe the lunisolar calendar, they celebrate Lunar New Year with their Chinese / Tsinoy friends and neighbors as their way of embracing the melting pot of regional customs.
+          </p>
+          <p>
+            Outside of the Philippines, tikoy is also known as nian gao. My family’s friends and colleagues come up with different answers when I ask about why on Lunar New Year they eat and give away nian gao, other than its name being a loose homonym for 'new year'. Some say it’s because sticky rice sticks good luck to you, others say it’s to make the Kitchen God’s mouth so sticky they can’t narc on your family to other gods.
+          </p>
+          <p>
+            Like the many reasons for enjoying tikoy, there are just as many ways to to make it! <a className={'story__link'} target='__blank' rel='noreferrer' href='https://www.youtube.com/watch?v=2SEp4UfHgbE&t=22s'>This recipe</a> is one I particularly enjoyed from a pastry caterer in the Philippines. My parents prefer the savory, fried meat filled version, and there are many recipes to find for that online. So in the spirit of the many ways to make tikoy and celebrate Lunar New Year (and the many ways our luck can go this year 🤞), Ox Chef will walk you through how to customize your own sweet version of sticky rice.
+          </p>
+          <p>
+            Below the tutorial is a submission box for sharing how <i>you</i> like to celebrate. I'd love to hear what your favorite Lunar New Year tradition is!
+          </p>
 
-        <p>
-          Vexillologist ramps schlitz beard trust fund shoreditch
-          cold-pressed. Stumptown hammock cloud bread, cred pinterest chambray
-          fingerstache shoreditch glossier. Schlitz pour-over skateboard
-          aesthetic raw denim, leggings vegan hammock hell of XOXO mlkshk
-          lumbersexual tumblr bushwick. Single-origin coffee cardigan chambray
-          dreamcatcher leggings pour-over tumeric beard. Dreamcatcher
-          readymade chillwave fam lyft umami, cred photo booth art party tote
-          bag microdosing.
-        </p>
-
-        <p>
-          Skateboard photo booth ramps, lo-fi meh lomo you probably haven't
-          heard of them. Distillery blue bottle beard, edison bulb iceland
-          retro hot chicken live-edge. Fam lo-fi authentic tacos jianbing
-          intelligentsia kombucha hella trust fund food truck palo santo
-          heirloom retro next level. Beard raclette next level kickstarter.
-          Put a bird on it cardigan next level mixtape YOLO la croix palo
-          santo yuccie blue bottle irony tumeric cornhole mlkshk. Irony
-          flexitarian fixie, four dollar toast selvage paleo prism pickled
-          tacos cornhole neutra meh.
-        </p>
-
-        <p>
-          3 wolf moon activated charcoal hella biodiesel, tilde paleo neutra.
-          Typewriter authentic jean shorts man bun, palo santo kitsch quinoa
-          man braid venmo coloring book retro. Cold-pressed biodiesel iceland
-          master cleanse, pork belly hoodie poke next level dreamcatcher DIY
-          iPhone wolf hell of. Wayfarers snackwave you probably haven't heard
-          of them photo booth.
-        </p>
-
-        <p>
-          Af farm-to-table normcore tilde copper mug plaid. 90's pinterest
-          polaroid, irony +1 schlitz adaptogen fanny pack godard poke cardigan
-          man braid. Mumblecore waistcoat flannel bitters. Biodiesel live-edge
-          keytar messenger bag taxidermy skateboard blue bottle plaid. Umami
-          blog knausgaard glossier cred enamel pin affogato. Tumblr activated
-          charcoal stumptown, shaman cliche pitchfork asymmetrical bitters.
-        </p>
-      </section>
+          <p>
+            Sige po! 🐂🏮
+          </p>
+          <p>
+            - <a className={'story__link'} href='http://angeliquedecastro.com' target='__blank' rel='noreferrer'>Angelique</a>🤘
+          </p>
+        </section>
+      </div>
     </div>
   );
   };
