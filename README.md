@@ -1,6 +1,8 @@
 # Tikoy Recipe
 An interactive web app that teaches you what tikoy is and how to customize it.
 
+http://maketikoy.net
+
 <!-- # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
