@@ -2,6 +2,8 @@
 An interactive web app that teaches you what tikoy is and how to customize it.
 
 http://maketikoy.net
+or
+https://tikoy-dev.ue.r.appspot.com/
 
 <!-- # Getting Started with Create React App
 
